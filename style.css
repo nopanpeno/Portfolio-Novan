@@ -92,6 +92,9 @@ body {
 
 .menu-toggle {
     display: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
     color: var(--light-text);
     font-size: 1.5rem;
     cursor: pointer;
@@ -1002,6 +1005,43 @@ textarea {
 .accordion-item.active .accordion-content {
     padding: 15px 20px;
     max-height: 500px;
+}
+
+
+/* Keyboard focus and motion preferences */
+:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.menu-toggle:focus-visible {
+    border-radius: 4px;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (hover: none) {
+    .gallery-overlay {
+        opacity: 1;
+    }
+
+    .card:hover,
+    .advantage-item:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 /* Media Queries for Responsiveness */
